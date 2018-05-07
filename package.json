@@ -1,0 +1,20 @@
+{
+  "name": "morphology",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://LukeEllul@bitbucket.org/schoolprojects1998/morphology.git"
+  },
+  "author": "Luke Ellul <ellul.luke@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/schoolprojects1998/morphology#readme",
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "ramda-fantasy": "^0.8.0"
+  }
+}
