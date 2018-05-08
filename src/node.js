@@ -56,10 +56,15 @@ const removeChild = R.curry((parent, char) =>
  * updateDeepNode :: (char -> bool -> Number -> {n: Node} -> Node) -> String -> Node -> Node
  */
 const updateDeepNode = R.curry((f, s, Node) =>
-    childExists(R.head(R.tail(s)), Node) ?
+    s.length === 1 ? Node(f) : childExists(R.head(R.tail(s)), Node) ?
         s.length === 2 ? addChild(removeChild(Node, R.tail(s)), getNodeChild(R.tail(s), Node)(f)) :
             addChild(Node, updateDeepNode(f, R.tail(s), getNodeChild(R.head(R.tail(s)), Node))) :
         Node);
+
+// const updateDeepNode = R.curry((f, s, Node) =>
+//     s.length === 1 ? Node(f) :
+//         childExists(R.head(R.tail(s)), Node) ?
+//             addChild(removeChild(Node, R.head(R.tail(s))), ))
 
 // const root = newNode('r', false, 20, {});
 // const c1 = newNode('e', false, 12, {});
@@ -81,5 +86,6 @@ module.exports = {
     addChild,
     removeChild,
     childExists,
-    getNodeChildren
+    getNodeChildren,
+    getNodeCharacter
 }
