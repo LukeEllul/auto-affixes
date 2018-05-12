@@ -101,5 +101,7 @@ module.exports = {
     childExists,
     getNodeChildren,
     getNodeCharacter,
-    getDeepProperty
+    getDeepProperty,
+    getNodeBool,
+    getNodeCount
 };
