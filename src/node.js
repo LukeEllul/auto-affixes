@@ -103,5 +103,6 @@ module.exports = {
     getNodeCharacter,
     getDeepProperty,
     getNodeBool,
-    getNodeCount
+    getNodeCount,
+    getNodeProperties
 };

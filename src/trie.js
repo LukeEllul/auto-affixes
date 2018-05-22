@@ -1,6 +1,5 @@
 const R = require('ramda');
 const { newNode, updateDeepNode, addChild, childExists, getNodeChildren, getNodeCharacter } = require('./node');
-const fs = require('fs');
 
 /**
  * createBranch :: char -> bool -> Number -> Object -> String -> Node -> Node
@@ -65,11 +64,19 @@ const rootNode = newNode(' ', false, 0, {},
 const insertWords = R.curry((map, node) =>
     Object.keys(map).reduce((node, k) => insertWord(k, true, map[k], node), node));
 
+/**
+ * getSuffixes :: String -> Node -> [String]
+ */
+const getSuffixes = R.curry((s, Node) =>
+    Node(c => _ => _ => _ => children => !R.equals(children, {}) ?
+        R.flatten(Object.keys(children).map(ch => getSuffixes(s + ch, children[ch]))) : [s]));
+
 module.exports = {
     insertWords,
     containsWord,
     insertWord,
     store,
     restore,
-    createBranch
+    createBranch,
+    getSuffixes
 };
