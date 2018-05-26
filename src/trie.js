@@ -78,5 +78,6 @@ module.exports = {
     store,
     restore,
     createBranch,
-    getSuffixes
+    getSuffixes,
+    rootNode
 };
