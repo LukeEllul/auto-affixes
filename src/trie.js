@@ -56,7 +56,7 @@ const containsWord = R.curry((s, Node) =>
  * rootNode :: Node
  */
 const rootNode = newNode(' ', false, 0, {},
-    Object.assign({}, ...R.range(97, 123).map(s => String.fromCharCode(s)).map(c => ({ [c]: newNode(c, false, 0, {}, {}) }))));
+    Object.assign({}, ...[...R.range(65, 91), ...R.range(97, 123)].map(s => String.fromCharCode(s)).map(c => ({ [c]: newNode(c, false, 0, {}, {}) }))));
 
 /**
  * insertWords :: {String: Number} -> Node -> Node

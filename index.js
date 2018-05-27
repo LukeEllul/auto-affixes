@@ -25,7 +25,7 @@ const newRoot = R.pipe(
 )(list);
 
 //iterative suffix boundary check for "reporters"
-boundarySuffixCheckLog(' reporters', '', newRoot, newRoot);
+//boundarySuffixCheckLog(' reporters', '', newRoot, newRoot);
 
 //iterative prefix boundary check for "reportable"
 boundaryPrefixCheckLog(' reportable', '', newRoot, newRoot);
