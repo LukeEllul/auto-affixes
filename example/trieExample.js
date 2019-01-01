@@ -49,7 +49,7 @@ console.log(b);
 console.log('We have 10 nos, one "no" for each word');
 console.log();
 
-console.log('Putting the wordlist stored in wordlist.txt in trie');
+console.log('Putting the wordlist stored in list1.txt in trie');
 
 //read words from list1.txt and store them in tree
 const BigTrie = insertWords(Object.assign({},

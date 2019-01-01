@@ -25,8 +25,15 @@ const newRoot = R.pipe(
 )(list);
 
 //iterative suffix boundary check for "reporters"
-//boundarySuffixCheckLog(' reporters', '', newRoot, newRoot);
+console.log('iterative suffix check for "reporters":');
+console.log();
+boundarySuffixCheckLog(' reporters', '', newRoot, newRoot);
 
+console.log();
+console.log();
+
+console.log('iterative prefix check for "reportable":');
+console.log();
 //iterative prefix boundary check for "reportable"
 boundaryPrefixCheckLog(' reportable', '', newRoot, newRoot);
 
@@ -36,6 +43,8 @@ const updatedSuffixes = updateSuffixBoundaries('', newRoot, newRoot);
 //create trie with updated prefix scores
 const updatedPrefixes = updatePrefixBoundaries(updatedSuffixes, updatedSuffixes);
 
+console.log();
+console.log('suffixes for words starting with "r":');
 //log suffixes in words starting with "r"
 console.log(getRealSuffixes(getNodeChildren(updatedSuffixes)['r']).map(node => getSuffixes('')(node)))
 
